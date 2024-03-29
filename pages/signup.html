@@ -81,23 +81,66 @@
             text-align: right;
 
         }
+        .cust-signup{
+            background-color: #3ABB25;
+            border: #3ABB25;
+            color: black;
+            width: 750px;
 
+            position: absolute;
+            left: 20px;
+        }
+        .form-cls{
+            margin-top: 40px;
+            margin-left: 10px;
+        }
+        .loginText{
+            margin-top: 70px;
+            margin-left: 10px;
+        }
     </style>
 
 </head>
 
 <body>
 
-  <div id="greenhalf">
-      <img src="../assets/images/icons8-shop-64.png" alt="shopLogo" title="shop Logo">
-      <h3> AB Super Centre </h3>
-  </div>
+      <div id="greenhalf">
+          <img src="../assets/images/icons8-shop-64.png" alt="shopLogo" title="shop Logo">
+          <h3> AB Super Centre </h3>
+      </div>
 
-  <h2>Sign up</h2>
+      <h2>Sign up</h2>
 
-  <div id="greenSquare"></div>
+      <div id="greenSquare">
 
+          <form class="form-cls">
 
+              <div class="mb-3">
+                  <label for="exampleInputUserName" class="form-label">User Name</label>
+                  <input type="text" class="form-control" id="exampleInputUserName" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+
+              <button type="submit" class="btn btn-primary cust-signup">Sign Up</button>
+
+              <div class="loginText">
+                  <span>Already have an account?&nbsp&nbsp&nbsp</span>
+                  <a href="log_in.html">Log In here</a>
+              </div>
+
+          </form>
+
+      </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
