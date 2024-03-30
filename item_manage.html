@@ -3,8 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Item Manage</title>
+    <link rel="stylesheet" href="assets/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .navBox{
+            background-color: #64F061;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid navBox">
+                <a class="navbar-brand" href="#">
+                    <img id="headerImg" src="assets/images/icons8-shop-64.png" alt="img logo" width="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav nav-underline">
+                        <li class="nav-item  otherNav">
+                            <a class="nav-link" href="index.html">Customer Manage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Item Manage</a>
+                        </li>
+                        <li class="nav-item  otherNav">
+                            <a class="nav-link" href="#">Place Order</a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="navbar-brand" href="#">
+                    <img id="AdminImg" src="assets/images/greenuser.png" alt="img logo" width="40">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
