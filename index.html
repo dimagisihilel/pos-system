@@ -30,11 +30,15 @@
             margin-left: 550px;
             margin-top: 30px;
         }
+        h5{
+            color: #1E6909;
+        }
     </style>
 
 
 </head>
 <body>
+    <!--header section-->
     <header>
         <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid navBox">
@@ -64,8 +68,7 @@
         </nav>
     </header>
 
-
-
+   <!-- search bar & 3 buttons-->
     <section>
         <div class="container mt-3">
             <form class="d-flex">
@@ -76,12 +79,12 @@
 
         <div class="btns">
             <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#CustomerAddform">Add</button>
-            <button type="button" class="btn btn-outline-warning me-4">Update</button>
+            <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#CustomerEditform">Update</button>
             <button type="button" class="btn btn-outline-danger ">Delete</button>
         </div>
-
     </section>
 
+    <!--Add Customer Model-->
     <section>
         <div class="modal" tabindex="-1" id="CustomerAddform">
             <div class="modal-dialog">
@@ -91,17 +94,95 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+
+                        <form>
+                            <div class="row mb-3">
+                                <label for="cusId" class="col-sm-2 col-form-label">Customer Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="cusId">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cusName" class="col-sm-2 col-form-label">Customer Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="cusName">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cusAddress" class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="cusAddress">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cusContact" class="col-sm-2 col-form-label">Contact No</label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control" id="cusContact" placeholder="07XXXXXXXX">
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-success">Add Customer</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
+
+
+   <!-- Update Customer Modal-->
+    <section>
+        <div class="modal" tabindex="-1" id="CustomerEditform">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Edit Customers</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+                            <div class="row mb-3">
+                                <label for="cusEditId" class="col-sm-2 col-form-label">Customer Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="cusEditId">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cusEditName" class="col-sm-2 col-form-label">Customer Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="cusEditName">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cusEditAddress" class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="cusEditAddress">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cusEditContact" class="col-sm-2 col-form-label">Contact No</label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control" id="cusEditContact" placeholder="07XXXXXXXX">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-warning">Edit Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
 
 
