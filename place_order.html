@@ -10,12 +10,24 @@
         body{
             width: 100vw;
             height: 100vh;
+            overflow: hidden;
         }
         .navBox{
             background-color: #64F061;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
+        .cus-card{
+            border: 2px solid #1E6909;
+        }
+        .order-upper{
+            margin-top: 20px;
+        }
+        .order-lower{
+            margin-top: 40px;
+        }
+        .two-cards{
 
+        }
 
     </style>
 
@@ -52,6 +64,65 @@
             </div>
         </nav>
     </header>
+
+    <!--2 cards for order and item-->
+    <div class="row  mx-2">
+        <!--order card-->
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card cus-card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Details</h5>
+                        <form>
+                           <!-- first 2 txt fields-->
+                            <section class="order-upper">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Order id" aria-label="Order id">
+                                    </div>
+                                    <div class="col">
+                                        <input type="datetime-local" class="form-control" placeholder="Date" aria-label="Date">
+                                    </div>
+                                </div>
+                            </section>
+
+                           <!-- dropdown & cus name-->
+                            <section class="order-lower">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Customer Id
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">C001</a></li>
+                                                <li><a class="dropdown-item" href="#">C002</a></li>
+                                                <li><a class="dropdown-item" href="#">C003</a></li>
+                                                <li><a class="dropdown-item" href="#">C004</a></li>
+                                                <li><a class="dropdown-item" href="#">C005</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Customer Name" aria-label="Customer Name">
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                </div>
+            </div>
+        </div>
+
+       <!-- item card-->
+        <div class="col-sm-6">
+            <div class="card cus-card">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
