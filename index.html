@@ -39,50 +39,54 @@
 </head>
 <body>
     <!--header section-->
-    <header>
-        <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid navBox">
-                <a class="navbar-brand" href="#">
-                    <img id="headerImg" src="assets/images/icons8-shop-64.png" alt="img logo" width="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="nav nav-underline">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Customer Manage</a>
-                        </li>
-                        <li class="nav-item  otherNav">
-                            <a class="nav-link" href="item_manage.html">Item Manage</a>
-                        </li>
-                        <li class="nav-item  otherNav">
-                            <a class="nav-link" href="#">Place Order</a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="navbar-brand" href="#">
-                    <img id="AdminImg" src="assets/images/greenuser.png" alt="img logo" width="40">
-                </a>
-            </div>
-        </nav>
-    </header>
+   <header>
+       <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
+           <div class="container-fluid navBox">
+               <a class="navbar-brand" href="#">
+                   <img id="headerImg" src="assets/images/icons8-shop-64.png" alt="img logo" width="50">
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                   <ul class="nav nav-underline">
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">Customer Manage</a>
+                       </li>
+                       <li class="nav-item  otherNav">
+                           <a class="nav-link" href="item_manage.html">Item Manage</a>
+                       </li>
+                       <li class="nav-item  otherNav">
+                           <a class="nav-link" href="#">Place Order</a>
+                       </li>
+                   </ul>
+               </div>
+               <a class="navbar-brand ms-auto" href="#">
+                   <img id="AdminImg" src="assets/images/greenuser.png" alt="img logo" width="40">
+               </a>
+           </div>
+       </nav>
+   </header>
 
    <!-- search bar & 3 buttons-->
-    <section>
-        <div class="container mt-3">
-            <form class="d-flex">
-                <input class="form-control me-2 searchBar" type="search" placeholder="Search customer details here." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+   <section class="mt-3">
+       <div class="container">
+           <form class="d-flex">
+               <input class="form-control me-2 searchBar" type="search" placeholder="Search customer details here." aria-label="Search">
+               <button class="btn btn-outline-success" type="submit">Search</button>
+           </form>
+       </div>
 
-        <div class="btns">
-            <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#CustomerAddform">Add</button>
-            <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#CustomerEditform">Update</button>
-            <button type="button" class="btn btn-outline-danger ">Delete</button>
-        </div>
-    </section>
+       <div class="container mt-3">
+           <div class="row justify-content-center">
+               <div class="col-md-12 text-center">
+                   <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#CustomerAddform">Add</button>
+                   <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#CustomerEditform">Update</button>
+                   <button type="button" class="btn btn-outline-danger">Delete</button>
+               </div>
+           </div>
+       </div>
+   </section>
 
     <!--Add Customer Model-->
     <section>
