@@ -27,11 +27,16 @@
            /* height: 15vh;*/
         }
         .btns{
-            margin-left: 550px;
-            margin-top: 30px;
+            margin-top: 50px;
         }
         h5{
             color: #1E6909;
+        }
+        .tableSec{
+            margin-top: 60px;
+        }
+        .customerTbl{
+            margin-top: 30px;
         }
     </style>
 
@@ -78,7 +83,7 @@
        </div>
 
        <div class="container mt-3">
-           <div class="row justify-content-center">
+           <div class="row justify-content-center btns">
                <div class="col-md-12 text-center">
                    <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#CustomerAddform">Add</button>
                    <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#CustomerEditform">Update</button>
@@ -184,6 +189,56 @@
             </div>
         </div>
     </section>
+
+    <section class="tableSec">
+        <h5>Customer Details</h5>
+
+        <table class="table customerTbl">
+            <thead>
+            <tr>
+                <th scope="col">Customer Id</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Customer Address</th>
+                <th scope="col">Contact No.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">C001</th>
+                <td>Kamal</td>
+                <td>Panadura</td>
+                <td>0713686811</td>
+            </tr>
+            <tr>
+                <th scope="row">C002</th>
+                <td>Nimal</td>
+                <td>Colombo</td>
+                <td>0714867453</td>
+            </tr>
+            <tr>
+                <th scope="row">C003</th>
+                <td>Sunil</td>
+                <td>Horana</td>
+                <td>0714867453</td>
+            </tr>
+            <tr>
+                <th scope="row">C004</th>
+                <td>Namal</td>
+                <td>Kalutara</td>
+                <td>0714867453</td>
+            </tr>
+            <tr>
+                <th scope="row">C005</th>
+                <td>Sunimal</td>
+                <td>Mathugama</td>
+                <td>0714867453</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+
 
 
 
