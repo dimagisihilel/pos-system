@@ -20,42 +20,72 @@
             background-color: #64F061;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
+        .searchBar{
+            width: 600px;
+        }
+        section{
+           /* height: 15vh;*/
+        }
+        .btns{
+            margin-left: 550px;
+            margin-top: 30px;
+        }
     </style>
-
 
 
 </head>
 <body>
-<header>
-    <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid navBox">
-            <a class="navbar-brand" href="#">
-                <img id="headerImg" src="assets/images/icons8-shop-64.png" alt="img logo" width="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Customer Manage</a>
-                    </li>
-                    <li class="nav-item  otherNav">
-                        <a class="nav-link" href="item_manage.html">Item Manage</a>
-                    </li>
-                    <li class="nav-item  otherNav">
-                        <a class="nav-link" href="#">Place Order</a>
-                    </li>
-                </ul>
+    <header>
+        <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid navBox">
+                <a class="navbar-brand" href="#">
+                    <img id="headerImg" src="assets/images/icons8-shop-64.png" alt="img logo" width="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav nav-underline">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Customer Manage</a>
+                        </li>
+                        <li class="nav-item  otherNav">
+                            <a class="nav-link" href="item_manage.html">Item Manage</a>
+                        </li>
+                        <li class="nav-item  otherNav">
+                            <a class="nav-link" href="#">Place Order</a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="navbar-brand" href="#">
+                    <img id="AdminImg" src="assets/images/greenuser.png" alt="img logo" width="40">
+                </a>
             </div>
-            <a class="navbar-brand" href="#">
-                <img id="AdminImg" src="assets/images/greenuser.png" alt="img logo" width="40">
-            </a>
+        </nav>
+    </header>
+
+
+
+    <section>
+        <div class="container mt-3">
+            <form class="d-flex">
+                <input class="form-control me-2 searchBar" type="search" placeholder="Search customer details here." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-    </nav>
-</header>
+
+        <div class="btns">
+            <button type="button" class="btn btn-outline-success me-4">Add</button>
+            <button type="button" class="btn btn-outline-warning me-4">Update</button>
+            <button type="button" class="btn btn-outline-danger ">Delete</button>
+        </div>
+
+    </section>
+
+    <section>
 
 
+    </section>
 
 
 
