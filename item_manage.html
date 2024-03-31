@@ -17,6 +17,12 @@
             background-color: #64F061;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
+        .searchBar{
+            width: 600px;
+        }
+        .btns{
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +54,40 @@
             </div>
         </nav>
     </header>
+
+
+    <!-- search bar & 3 buttons-->
+    <section class="mt-3">
+        <div class="container">
+            <form class="d-flex">
+                <input class="form-control me-2 searchBar" type="search" placeholder="Search Item details here." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="container mt-3">
+            <div class="row justify-content-center btns">
+                <div class="col-md-12 text-center">
+                    <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#ItemAddform">Add</button>
+                    <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#ItemEditform">Update</button>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
