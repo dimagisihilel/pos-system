@@ -34,6 +34,9 @@
            margin-top: 7px;
             margin-left: 480px;
         }*/
+        #plcOrdCard{
+            margin-top: 10px;
+        }
 
     </style>
 
@@ -173,6 +176,53 @@
             </div>
         </div>
     </div>
+
+    <!--place order card-->
+    <div class="card cus-card mx-2" id="plcOrdCard">
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col -md-6 mb-3">
+                        <label for="total" class="form-label">Total</label>
+                        <input type="text" class="form-control" id="total">
+                    </div>
+                    <div class="col -md-6 mb-3">
+                        <label for="discount" class="form-label">Discount</label>
+                        <input type="text" class="form-control" id="discount">
+                    </div>
+                    <div class="col -md-6 mb-3">
+                        <label for="newTotal" class="form-label">New Total</label>
+                        <input type="text" class="form-control" id="newTotal">
+                    </div>
+                    <div class="col -md-6 mb-3">
+                        <label for="paidAmount" class="form-label">Paid Amount</label>
+                        <input type="text" class="form-control" id="paidAmount">
+                    </div>
+                    <div class="col -md-6 mb-3">
+                        <label for="balance" class="form-label">Balance</label>
+                        <input type="text" class="form-control" id="balance">
+                    </div>
+                </div>
+            </form>
+
+            <!--btn Purchase-->
+            <div class="row mt-3">
+                <div class="col">
+                    <button type="button" class="btn btn-success btn-block" id="btnpurchase">Purchase</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
