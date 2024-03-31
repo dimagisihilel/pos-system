@@ -75,7 +75,7 @@
         </div>
 
         <div class="btns">
-            <button type="button" class="btn btn-outline-success me-4">Add</button>
+            <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#CustomerAddform">Add</button>
             <button type="button" class="btn btn-outline-warning me-4">Update</button>
             <button type="button" class="btn btn-outline-danger ">Delete</button>
         </div>
@@ -83,7 +83,23 @@
     </section>
 
     <section>
-
+        <div class="modal" tabindex="-1" id="CustomerAddform">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Customers</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 
