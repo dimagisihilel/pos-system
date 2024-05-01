@@ -78,7 +78,7 @@
        </nav>
    </header>
 
-
+         <!--Customer Management Section-->
     <section id="customer-mng-section">
 
         <!-- search bar & 3 buttons-->
@@ -253,6 +253,191 @@
                 </tbody>
             </table>
         </section>
+    </section>
+
+
+         <!--Item Management Section-->
+    <section id="item-mng-section">
+
+
+        <!-- search bar & 3 buttons-->
+        <section class="mt-3">
+            <div class="container">
+                <form class="d-flex">
+                    <input class="form-control me-2 searchBar" type="search" placeholder="Search Item details here." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="container mt-3">
+                <div class="row justify-content-center btns">
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#ItemAddform">Add</button>
+                        <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#ItemEditform">Update</button>
+                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Add Item Model-->
+        <section>
+            <div class="modal" tabindex="-1" id="ItemAddform">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add New Items</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="itemId" class="col-sm-2 col-form-label">Item Code</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="itemId">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="itemDescription" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="itemDescription">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="unitPrice" class="col-sm-2 col-form-label">Unit Price</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="unitPrice" placeholder="Rs.">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="qty" class="col-sm-2 col-form-label">Quantity On Hand</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="qty">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success">Add Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Update Item Modal-->
+        <section>
+            <div class="modal" tabindex="-1" id="ItemEditform">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"> Edit Items</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="itemEditId" class="col-sm-2 col-form-label"> Item Code</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="itemEditId">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="itemEditDes" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="itemEditDes">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="itemEditPrice" class="col-sm-2 col-form-label">Unit Price</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="itemEditPrice" placeholder="Rs.">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="itemEditqty" class="col-sm-2 col-form-label">Qty On Hand</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="itemEditqty">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-warning">Update Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Item table section-->
+        <section class="tableSec">
+            <h5>Item Details</h5>
+
+            <table class="table ItemTbl">
+                <thead>
+                <tr>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Qty On Hand</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">I001</th>
+                    <td>Chocolate</td>
+                    <td>Rs.280</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <th scope="row">I002</th>
+                    <td>Baby Soap</td>
+                    <td>Rs.80</td>
+                    <td>230</td>
+                </tr>
+                <tr>
+                    <th scope="row">I003</th>
+                    <td>Popit</td>
+                    <td>Rs20</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <th scope="row">I004</th>
+                    <td> Black Pen</td>
+                    <td> Rs.25</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <th scope="row">I005</th>
+                    <td>Smack</td>
+                    <td>Rs.170</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <th scope="row">I006</th>
+                    <td>Muffin</td>
+                    <td>Rs.70</td>
+                    <td>40</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+
+
+
+
     </section>
 
 
