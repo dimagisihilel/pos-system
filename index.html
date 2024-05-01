@@ -443,6 +443,221 @@
     </section>
 
 
+        <!--Place Order Management Section-->
+    <section id="order-mng-section">
+
+        <!--2 cards for order and item-->
+        <div class="row  mx-2">
+            <!--order card-->
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card cus-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Order Details</h5>
+                        <form>
+                            <!-- first 2 txt fields-->
+                            <section class="order-upper">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Order id" aria-label="Order id">
+                                    </div>
+                                    <div class="col">
+                                        <input type="datetime-local" class="form-control" placeholder="Date" aria-label="Date">
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- dropdown & cus name-->
+                            <section class="order-lower">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Customer Id
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">C001</a></li>
+                                                <li><a class="dropdown-item" href="#">C002</a></li>
+                                                <li><a class="dropdown-item" href="#">C003</a></li>
+                                                <li><a class="dropdown-item" href="#">C004</a></li>
+                                                <li><a class="dropdown-item" href="#">C005</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Customer Name" aria-label="Customer Name">
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- item card-->
+            <div class="col-sm-6">
+                <div class="card cus-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Item Details</h5>
+                        <form>
+
+                            <section class="item-upper">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Item Id
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">I001</a></li>
+                                                <li><a class="dropdown-item" href="#">I002</a></li>
+                                                <li><a class="dropdown-item" href="#">I003</a></li>
+                                                <li><a class="dropdown-item" href="#">I004</a></li>
+                                                <li><a class="dropdown-item" href="#">I005</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Description" aria-label="Description">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Unit Price- Rs." aria-label="Unit Price">
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="item-lower">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="number" class="form-control" placeholder="Qty On Hnd" aria-label="Qty On Hnd">
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" class="form-control" placeholder="Order Qty" aria-label="Order Qty">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Total price of item" aria-label="Total price for the Item">
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                        <!-- Add Item button -->
+                        <div class="d-grid mt-3">
+                            <button type="button" class="btn btn-success" id="btnAddItem">Add Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--place order card-->
+        <div class="card cus-card mx-2" id="plcOrdCard">
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col -md-6 mb-3">
+                            <label for="total" class="form-label">Total</label>
+                            <input type="text" class="form-control" id="total">
+                        </div>
+                        <div class="col -md-6 mb-3">
+                            <label for="discount" class="form-label">Discount</label>
+                            <input type="text" class="form-control" id="discount">
+                        </div>
+                        <div class="col -md-6 mb-3">
+                            <label for="newTotal" class="form-label">New Total</label>
+                            <input type="text" class="form-control" id="newTotal">
+                        </div>
+                        <div class="col -md-6 mb-3">
+                            <label for="paidAmount" class="form-label">Paid Amount</label>
+                            <input type="text" class="form-control" id="paidAmount">
+                        </div>
+                        <div class="col -md-6 mb-3">
+                            <label for="balance" class="form-label">Balance</label>
+                            <input type="text" class="form-control" id="balance">
+                        </div>
+                    </div>
+                </form>
+
+                <!--btn Purchase-->
+                <div class="row mt-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-success btn-block" id="btnpurchase">Purchase</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Purchase table section-->
+        <section class="tableSec">
+            <h6> Purchase Details</h6>
+
+            <div class="table-responsive">
+                <table class="table PurchaseTbl">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Id</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Order Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Chocolate</td>
+                        <td>Rs.280</td>
+                        <td>2</td>
+                        <td>560</td>
+                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I002</th>
+                        <td>Popit</td>
+                        <td>Rs.20</td>
+                        <td>10</td>
+                        <td>200</td>
+                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Chocolate</td>
+                        <td>Rs.280</td>
+                        <td>2</td>
+                        <td>560</td>
+                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Chocolate</td>
+                        <td>Rs.280</td>
+                        <td>2</td>
+                        <td>560</td>
+                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Chocolate</td>
+                        <td>Rs.280</td>
+                        <td>2</td>
+                        <td>560</td>
+                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+    </section>
+
+
 
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
