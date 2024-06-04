@@ -49,6 +49,14 @@ body{
 #item-mng-section .ItemTbl{
     margin-top: 30px;
 }
+#item-mng-section .invalid-input {
+    border: 2px solid red;
+}
+#item-mng-section .error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
 
 /*Place order Styles*/
 

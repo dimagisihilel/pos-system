@@ -6,6 +6,92 @@ import {items} from "../db/DB.js";
 // Define a variable to store the index of the clicked row
 var selectedRowIndex = -1;
 
+
+// Validate item form fields
+function validateItemForm(id, description, price, qty) {
+    let isValid = true;
+
+    // Reset input styles and error messages
+    $('input').removeClass('invalid-input');
+    $('.error-message').hide();
+
+    // Validate ID: alphanumeric
+    const idPattern = /^[a-zA-Z0-9]+$/;
+    if (!id || !idPattern.test(id)) {
+        $('#itemId').addClass('invalid-input');
+        $('#itemIdError').text('ID must be alphanumeric.').show();
+        isValid = false;
+    }
+
+    // Validate Description: non-empty
+    if (!description) {
+        $('#itemDescription').addClass('invalid-input');
+        $('#itemDescriptionError').text('Description cannot be empty.').show();
+        isValid = false;
+    }
+
+    // Validate Price: positive number
+    const pricePattern = /^\d+(\.\d{1,2})?$/;
+    if (!price || !pricePattern.test(price) || parseFloat(price) <= 0) {
+        $('#unitPrice').addClass('invalid-input');
+        $('#itemPriceError').text('Price must be a positive number.').show();
+        isValid = false;
+    }
+
+    // Validate Quantity: positive integer
+    const qtyPattern = /^\d+$/;
+    if (!qty || !qtyPattern.test(qty) || parseInt(qty) <= 0) {
+        $('#qty').addClass('invalid-input');
+        $('#itemQtyError').text('Quantity must be a positive integer.').show();
+        isValid = false;
+    }
+
+    return isValid;
+}
+function validateUpdateForm(id, description, price, qty) {
+    let isValid = true;
+
+    // Reset input styles and error messages
+    $('input').removeClass('invalid-input');
+    $('.error-message').hide();
+
+    // Validate ID: alphanumeric
+    const idPattern = /^[a-zA-Z0-9]+$/;
+    if (!id || !idPattern.test(id)) {
+        $('#itemEditId').addClass('invalid-input');
+        $('#itemEditIdError').text('ID must be alphanumeric.').show();
+        isValid = false;
+    }
+
+    // Validate Description: non-empty
+    if (!description) {
+        $('#itemEditDes').addClass('invalid-input');
+        $('#itemEditDescriptionError').text('Description cannot be empty.').show();
+        isValid = false;
+    }
+
+    // Validate Price: positive number
+    const pricePattern = /^\d+(\.\d{1,2})?$/;
+    if (!price || !pricePattern.test(price) || parseFloat(price) <= 0) {
+        $('#itemEditPrice').addClass('invalid-input');
+        $('#itemEditPriceError').text('Price must be a positive number.').show();
+        isValid = false;
+    }
+
+    // Validate Quantity: positive integer
+    const qtyPattern = /^\d+$/;
+    if (!qty || !qtyPattern.test(qty) || parseInt(qty) <= 0) {
+        $('#itemEditqty').addClass('invalid-input');
+        $('#itemEditQtyError').text('Quantity must be a positive integer.').show();
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+
+
+
 //load item table
 function loadTable(){
 
@@ -46,13 +132,16 @@ $("#btn-add-item").on('click', () => {
     console.log(itemPrice);
     console.log(itemQty);
 
+    if (!validateItemForm(itemId, itemDesc, itemPrice, itemQty)) {
+        return;
+    }
+
     //create object by using model
     let item = new ItemModel(itemId,itemDesc,itemPrice,itemQty);
 
     items.push(item);
     console.log(item);
-    console.log(items);
-
+    console.log(items)
     loadTable();
 });
 
@@ -92,6 +181,10 @@ $("#btn-update-item").on('click', () => {
     var updatedItemDesc = $("#itemEditDes").val();
     var updatedItemPrice = $("#itemEditPrice").val();
     var updatedItemQty = $("#itemEditqty").val();
+
+    if (!validateUpdateForm(updatedItemId, updatedItemDesc, updatedItemPrice, updatedItemQty)) {
+        return;
+    }
 
     items[selectedRowIndex].itemid = updatedItemId;
     items[selectedRowIndex].description = updatedItemDesc;
