@@ -64,7 +64,7 @@
                     <div class="col-md-12 text-center">
                         <button type="button" class="btn btn-outline-success me-4" data-bs-toggle="modal" data-bs-target="#CustomerAddform">Add</button>
                         <button type="button" class="btn btn-outline-warning me-4" data-bs-toggle="modal" data-bs-target="#CustomerEditform">Update</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                        <button type="button" id="btn-dlt-customer" class="btn btn-outline-danger">Delete</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success">Add Customer</button>
+                            <button type="button" id="btn-add-customer" class="btn btn-success">Add Customer</button>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-warning">Update Customer</button>
+                            <button type="button" id="btn-update-customer" class="btn btn-warning">Update Customer</button>
                         </div>
                     </div>
                 </div>
@@ -181,43 +181,14 @@
                     <th scope="col">Contact No.</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">C001</th>
+                <tbody id="customer-tbl-body">
+
+                <!--<tr>
+                    <td>C001</td>
                     <td>Kamal</td>
                     <td>Panadura</td>
                     <td>0713686811</td>
-                </tr>
-                <tr>
-                    <th scope="row">C002</th>
-                    <td>Nimal</td>
-                    <td>Colombo</td>
-                    <td>0714867453</td>
-                </tr>
-                <tr>
-                    <th scope="row">C003</th>
-                    <td>Sunil</td>
-                    <td>Horana</td>
-                    <td>0714867453</td>
-                </tr>
-                <tr>
-                    <th scope="row">C004</th>
-                    <td>Namal</td>
-                    <td>Kalutara</td>
-                    <td>0714867453</td>
-                </tr>
-                <tr>
-                    <th scope="row">C005</th>
-                    <td>Sunimal</td>
-                    <td>Mathugama</td>
-                    <td>0714867453</td>
-                </tr>
-                <tr>
-                    <th scope="row">C006</th>
-                    <td>Piyal</td>
-                    <td>Wadduwa</td>
-                    <td>0714867453</td>
-                </tr>
+                </tr>-->
 
                 </tbody>
             </table>
@@ -615,20 +586,13 @@
             </div>
         </section>
 
-
-
-
-
-
-
-
     </section>
 
 
 
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="assets/js/customer.js"></script>
+<script type="module" src="controller/customerController.js"></script>
 
 </body>
 </html>
