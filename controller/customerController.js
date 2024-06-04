@@ -42,6 +42,90 @@ $('#navOrder').on('click',()=>{
 });
 
 
+// Validate form fields
+function validateCustomerForm(id, name, address, contact) {
+    let isValid = true;
+
+    // Reset input styles and error messages
+    $('input').removeClass('invalid-input');
+    $('.error-message').hide();
+
+    // Validate ID: alphanumeric
+    const idPattern = /^[a-zA-Z0-9]+$/;
+    if (!id || !idPattern.test(id)) {
+        $('#cusId').addClass('invalid-input');
+        $('#cusIdError').text('ID must be contain only letters and numbers.').show();
+        isValid = false;
+    }
+
+    // Validate Name: only letters and spaces
+    const namePattern = /^[a-zA-Z\s]+$/;
+    if (!name || !namePattern.test(name)) {
+        $('#cusName').addClass('invalid-input');
+        $('#cusNameError').text('Name must contain only letters and spaces.').show();
+        isValid = false;
+    }
+
+    // Validate Address: non-empty
+    if (!address) {
+        $('#cusAddress').addClass('invalid-input');
+        $('#cusAddressError').text('Address cannot be empty.').show();
+        isValid = false;
+    }
+
+    // Validate Contact: exactly 10 digits
+    const contactPattern = /^\d{10}$/;
+    if (!contact || !contactPattern.test(contact)) {
+        $('#cusContact').addClass('invalid-input');
+        $('#cusContactError').text('Contact must be exactly 10 digits.').show();
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+function validateUpdateForm(id, name, address, contact) {
+    let isValid = true;
+
+    // Reset input styles and error messages
+    $('input').removeClass('invalid-input');
+    $('.error-message').hide();
+
+    // Validate ID: alphanumeric
+    const idPattern = /^[a-zA-Z0-9]+$/;
+    if (!id || !idPattern.test(id)) {
+        $('#cusEditId').addClass('invalid-input');
+        $('#cusEditIdError').text('ID must be alphanumeric.').show();
+        isValid = false;
+    }
+
+    // Validate Name: only letters and spaces
+    const namePattern = /^[a-zA-Z\s]+$/;
+    if (!name || !namePattern.test(name)) {
+        $('#cusEditName').addClass('invalid-input');
+        $('#cusEditNameError').text('Name must contain only letters and spaces.').show();
+        isValid = false;
+    }
+
+    // Validate Address: non-empty
+    if (!address) {
+        $('#cusEditAddress').addClass('invalid-input');
+        $('#cusEditAddressError').text('Address cannot be empty.').show();
+        isValid = false;
+    }
+
+    // Validate Contact: exactly 10 digits
+    const contactPattern = /^\d{10}$/;
+    if (!contact || !contactPattern.test(contact)) {
+        $('#cusEditContact').addClass('invalid-input');
+        $('#cusEditContactError').text('Contact must be exactly 10 digits.').show();
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+
         //load customer table
 function loadTable(){
 
@@ -101,6 +185,12 @@ $("#btn-add-customer").on('click', () => {
         contact: customerContact,
     }*/
 
+
+    if (!validateCustomerForm(customerId, customerName, customerAddress, customerContact)) {
+        return;
+    }
+
+
     //create object by using model
     let customer = new CustomerModel(customerId,customerName,customerAddress,customerContact);
 
@@ -113,49 +203,7 @@ $("#btn-add-customer").on('click', () => {
     loadTable();
 });
 
-/*
-$("#btn-update-customer").on('click', () => {
-    var studentId =  $("#txtStudentId").val();
-    var studentFName =  $("#txtFName").val();
-    var studentLName =  $("#txtLName").val();
-    var studentAddress =  $("#txtAddress").val();
-    var program = $('input[name ="flexRadioDefault"]:checked').val();
 
-    let StudentObj = students[recordIndex];
-    StudentObj.id = studentId;
-    StudentObj.firstName = studentFName;
-    StudentObj.lastName = studentLName;
-    StudentObj.address = studentAddress;
-    StudentObj.program = program;
-
-    loadTable();
-    $("#student-reset").click();
-    // console.log("s1 : ",StudentObj);
-    //console.log(students[recordIndex])
-
-
-});*/
-
-/*
-
-$("#customer-tbl-body").on('click', 'tr' , function () {
-
-    let index = $(this).index();
-    recordIndex = index;
-
-    let CusId = $(this).find(".customer-id-value").text();
-    let CusName = $(this).find(".customer-name-value").text();
-    let CusAddress = $(this).find(".customer-address-value").text();
-    let CusContact = $(this).find(".customer-contact-value").text();
-
-    $("#cusId").val(CusId);
-    $("#cusName").val(CusName);
-    $("#cusAddress").val(CusAddress);
-    $("#cusContact").val(CusContact);
-
-});
-
-*/
 // Function to highlight the clicked row and store its index
 $("#customer-tbl-body").on('click', 'tr', function () {
 
@@ -192,6 +240,11 @@ $("#btn-update-customer").on('click', () => {
     var updatedCustomerName = $("#cusEditName").val();
     var updatedCustomerAddress = $("#cusEditAddress").val();
     var updatedCustomerContact = $("#cusEditContact").val();
+
+    if (!validateUpdateForm(updatedCustomerId, updatedCustomerName, updatedCustomerAddress, updatedCustomerContact)) {
+        return;
+    }
+
 
     customers[selectedRowIndex].customerid = updatedCustomerId;
     customers[selectedRowIndex].name = updatedCustomerName;

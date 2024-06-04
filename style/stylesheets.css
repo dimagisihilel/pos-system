@@ -21,6 +21,14 @@ body{
 #customer-mng-section .customerTbl{
     margin-top: 30px;
 }
+#customer-mng-section .invalid-input {
+    border: 2px solid red;
+}
+#customer-mng-section .error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
 #item-mng-section .ItemTbl{
     margin-top: 30px;
 }
