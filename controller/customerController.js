@@ -205,7 +205,21 @@ $("#btn-update-customer").on('click', () => {
     selectedRowIndex = -1;
 });
 
+// Delete customer function
+$("#btn-dlt-customer").on('click', () => {
+    if (selectedRowIndex === -1) {
+        alert("No row selected.");
+        return;
+    }
 
+    if (!confirm("Are you sure you want to delete this customer?")) {
+        return;
+    }
+
+    customers.splice(selectedRowIndex, 1);
+    loadTable();
+    selectedRowIndex = -1;
+});
 
 
 
