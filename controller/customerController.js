@@ -275,6 +275,24 @@ $("#btn-dlt-customer").on('click', () => {
 });
 
 
+// Search form submission handler
+$("#search-form").on('submit', (event) => {
+    event.preventDefault();
+    var searchId = $("#searchBar").val().trim();
+
+    var customer = customers.find(c => c.customerid === searchId);
+    if (customer) {
+        $("#modalCustomerId").text(customer.customerid);
+        $("#modalCustomerName").text(customer.name);
+        $("#modalCustomerAddress").text(customer.address);
+        $("#modalCustomerContact").text(customer.contact);
+
+        $("#customerModal").modal('show');
+    } else {
+        alert("Customer not found.");
+    }
+});
+
 
 
 
