@@ -214,7 +214,23 @@ $("#btn-dlt-item").on('click', () => {
     selectedRowIndex = -1;
 });
 
+// Search form submission handler for items
+$("#item-search-form").on('submit', (event) => {
+    event.preventDefault();
+    var searchItemId = $("#itemSearchBar").val().trim();
 
+    var item = items.find(i => i.itemid === searchItemId);
+    if (item) {
+        $("#modalItemId").text(item.itemid);
+        $("#modalItemDescription").text(item.description);
+        $("#modalItemPrice").text(item.unitprice);
+        $("#modalItemQty").text(item.qty);
+
+        $("#itemModal").modal('show');
+    } else {
+        alert("Item not found.");
+    }
+});
 
 
 

@@ -235,8 +235,8 @@
         <!-- search bar & 3 buttons-->
         <section class="mt-3">
             <div class="container">
-                <form class="d-flex">
-                    <input class="form-control me-2 searchBar" type="search" placeholder="Search Item details here." aria-label="Search">
+                <form id="item-search-form" class="d-flex">
+                    <input id="itemSearchBar" class="form-control me-2 searchBar" type="search" placeholder="Search Item details here." aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
@@ -251,6 +251,28 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- Modal Structure for Search Items -->
+        <div class="modal" id="itemModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Item Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ID:</strong> <span id="modalItemId"></span></p>
+                        <p><strong>Description:</strong> <span id="modalItemDescription"></span></p>
+                        <p><strong>Unit Price:</strong> <span id="modalItemPrice"></span></p>
+                        <p><strong>Quantity in Hand:</strong> <span id="modalItemQty"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <!--Add Item Model-->
