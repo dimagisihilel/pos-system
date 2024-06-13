@@ -424,10 +424,10 @@
                             <section class="order-upper">
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Order id" aria-label="Order id">
+                                        <input type="text" id="orderId" class="form-control" placeholder="Order id" aria-label="Order id">
                                     </div>
                                     <div class="col">
-                                        <input type="datetime-local" class="form-control" placeholder="Date" aria-label="Date">
+                                        <input type="datetime-local" id="orderDate" class="form-control" placeholder="Date" aria-label="Date">
                                     </div>
                                 </div>
                             </section>
@@ -436,7 +436,7 @@
                             <section class="order-lower">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="dropdown">
+                                        <!--<div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Customer Id
                                             </button>
@@ -447,10 +447,14 @@
                                                 <li><a class="dropdown-item" href="#">C004</a></li>
                                                 <li><a class="dropdown-item" href="#">C005</a></li>
                                             </ul>
-                                        </div>
+                                        </div>-->
+                                        <select class="form-control" id="customerIdDropdown">
+                                            <!-- Customer IDs will be loaded here -->
+                                            <option value="" disabled selected>Select Customer ID</option>
+                                        </select>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Customer Name" aria-label="Customer Name">
+                                        <input type="text" id="customerName" class="form-control" placeholder="Customer Name" aria-label="Customer Name">
                                     </div>
                                 </div>
                             </section>
@@ -469,7 +473,7 @@
                             <section class="item-upper">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="dropdown">
+                                        <!--<div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Item Id
                                             </button>
@@ -480,13 +484,17 @@
                                                 <li><a class="dropdown-item" href="#">I004</a></li>
                                                 <li><a class="dropdown-item" href="#">I005</a></li>
                                             </ul>
-                                        </div>
+                                        </div>-->
+                                        <select class="form-control" id="itemIdDropdown">
+                                            <!-- Customer IDs will be loaded here -->
+                                            <option value="" disabled selected>Select Item ID</option>
+                                        </select>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Description" aria-label="Description">
+                                        <input type="text" id="itemOdDescription" class="form-control" placeholder="Description" aria-label="Description">
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Unit Price- Rs." aria-label="Unit Price">
+                                        <input type="text" id="itemOdUnitPrice" class="form-control" placeholder="Unit Price- Rs." aria-label="Unit Price">
                                     </div>
                                 </div>
                             </section>
@@ -495,13 +503,13 @@
                             <section class="item-lower">
                                 <div class="row">
                                     <div class="col">
-                                        <input type="number" class="form-control" placeholder="Qty On Hnd" aria-label="Qty On Hnd">
+                                        <input type="number" id="itemOdQty" class="form-control" placeholder="Qty On Hnd" aria-label="Qty On Hnd">
                                     </div>
                                     <div class="col">
-                                        <input type="number" class="form-control" placeholder="Order Qty" aria-label="Order Qty">
+                                        <input type="number" id="itemOdOrderQty" class="form-control" placeholder="Order Qty" aria-label="Order Qty">
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Total price of item" aria-label="Total price for the Item">
+                                        <input type="text" id="itemOdTotPrice" class="form-control" placeholder="Total price of item" aria-label="Total price for the Item">
                                     </div>
                                 </div>
                             </section>
@@ -622,6 +630,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script type="module" src="controller/customerController.js"></script>
 <script type="module" src="controller/itemController.js"></script>
+<script type="module" src="controller/orderController.js"></script>
 
 </body>
 </html>
