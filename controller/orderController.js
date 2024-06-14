@@ -4,10 +4,106 @@ import {orderItems} from "../db/DB.js";
 import {customers} from "../db/DB.js";
 import {items} from "../db/DB.js";
 
+/*function updateTotal() {
+    let total = 0;
+    $(".PurchaseTbl tbody tr").each(function () {
+        let rowTotal = parseFloat($(this).find("td:nth-child(5)").text());
+        total += rowTotal;
+    });
+    $("#total").val(total.toFixed(2));
+    updateNewTotal();
+
+}*/
+let orderIdCounter = 1;
+
+function updateTotal() {
+    let total = 0;
+    $(".PurchaseTbl tbody tr").each(function () {
+        let rowTotal = parseFloat($(this).find("td:nth-child(5)").text());
+        total += rowTotal;
+    });
+    $("#total").val(total.toFixed(2));
+    $("#discount").val('');
+    $("#newTotal").val('');
+    $("#paidAmount").val('');
+    $("#balance").val('');
+}
+
+/*
+
+function updateNewTotal() {
+    let total = parseFloat($("#total").val()) || 0;
+    let discount = parseFloat($("#discount").val()) || 0;
+    let newTotal = total - discount;
+    $("#newTotal").val(newTotal.toFixed(2));
+}
+*/
+
+/*function updateNewTotal() {
+    let total = parseFloat($("#total").val()) || 0;
+    let discountPercent = parseFloat($("#discount").val()) || 0;
+    let discountAmount = (total * discountPercent) / 100;
+    let newTotal = total - discountAmount;
+    $("#newTotal").val(newTotal.toFixed(2));
+    updateBalance();
+}*/
+
+function updateNewTotal() {
+    let total = parseFloat($("#total").val()) || 0;
+    let discountPercent = parseFloat($("#discount").val()) || 0;
+
+    if (discountPercent > 0) {
+        let discountAmount = (total * discountPercent) / 100;
+        let newTotal = total - discountAmount;
+        $("#newTotal").val(newTotal.toFixed(2));
+    } else {
+        $("#newTotal").val('');
+    }
+}
+
+
+
+/*function updateBalance() {
+    let newTotal = parseFloat($("#newTotal").val()) || 0;
+    let paidAmount = parseFloat($("#paidAmount").val()) || 0;
+    let balance = paidAmount - newTotal;
+    $("#balance").val(balance.toFixed(2));
+}*/
+
+function updateBalance() {
+    let newTotal = parseFloat($("#newTotal").val()) || 0;
+    let paidAmount = parseFloat($("#paidAmount").val()) || 0;
+
+    if (paidAmount > 0) {
+        let balance = paidAmount - newTotal;
+        $("#balance").val(balance.toFixed(2));
+    } else {
+        $("#balance").val('');
+    }
+}
+
+function clearFormInputs() {
+    $("#customerIdDropdown").val('');
+    $("#customerName").val('');
+    $("#itemIdDropdown").val('');
+    $("#itemOdDescription").val('');
+    $("#itemOdUnitPrice").val('');
+    $("#itemOdQty").val('');
+    $("#itemOdOrderQty").val('');
+    $("#itemOdTotPrice").val('');
+    $("#total").val('');
+    $("#discount").val('');
+    $("#newTotal").val('');
+    $("#paidAmount").val('');
+    $("#balance").val('');
+    $(".PurchaseTbl tbody").empty();
+}
+
+
 
 $("#navOrder").on("click", () => {
 
-    let orderIdCounter = 1;
+    //let orderIdCounter = 1;
     $("#orderId").val(orderIdCounter);
 
     let today = new Date().toISOString().slice(0, 16); // Get the current date and format it for input type="datetime-local"
@@ -112,6 +208,57 @@ $("#btnAddItem").on('click', function () {
 
             // Remove row from table
             $(this).closest('tr').remove();
+
+            // Update total
+            updateTotal();
         });
+
+        // Update total
+        updateTotal();
     }
+});
+
+// Update new total when discount is changed
+$("#discount").on('input', function () {
+    updateNewTotal();
+});
+
+// Update balance when paid amount is changed
+$("#paidAmount").on('input', function () {
+    updateBalance();
+});
+
+// Handle purchase button click
+$("#btnpurchase").on('click', function () {
+    let customerId = $("#customerIdDropdown").val();
+    let orderDate = $("#orderDate").val();
+    let total = parseFloat($("#total").val());
+    let discount = parseFloat($("#discount").val());
+    let newTotal = parseFloat($("#newTotal").val());
+    let paidAmount = parseFloat($("#paidAmount").val());
+    let balance = parseFloat($("#balance").val());
+
+    // Add each item in the table to the orderItems array
+    $(".PurchaseTbl tbody tr").each(function () {
+        let itemId = $(this).find("th").text();
+        let description = $(this).find("td:nth-child(2)").text();
+        let unitPrice = parseFloat($(this).find("td:nth-child(3)").text().replace('Rs.', ''));
+        let orderQty = parseInt($(this).find("td:nth-child(4)").text());
+        let total = parseFloat($(this).find("td:nth-child(5)").text());
+
+        let orderItem = new OrderItemsModel(orderIdCounter, customerId, orderDate, itemId, description, unitPrice, orderQty, total);
+        orderItems.push(orderItem);
+    });
+
+    // Increment order ID for the next order
+    orderIdCounter++;
+
+    // Clear form inputs
+    clearFormInputs();
+
+    // Display next order ID
+    $("#orderId").val(orderIdCounter);
+
+    // Show success message (optional)
+    alert("Order placed successfully!");
 });
