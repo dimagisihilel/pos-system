@@ -4,16 +4,6 @@ import {orderItems} from "../db/DB.js";
 import {customers} from "../db/DB.js";
 import {items} from "../db/DB.js";
 
-/*function updateTotal() {
-    let total = 0;
-    $(".PurchaseTbl tbody tr").each(function () {
-        let rowTotal = parseFloat($(this).find("td:nth-child(5)").text());
-        total += rowTotal;
-    });
-    $("#total").val(total.toFixed(2));
-    updateNewTotal();
-
-}*/
 let orderIdCounter = 1;
 
 function updateTotal() {
@@ -30,7 +20,7 @@ function updateTotal() {
 }
 
 /*
-
+ if you want to give the discout as a number not as a %
 function updateNewTotal() {
     let total = parseFloat($("#total").val()) || 0;
     let discount = parseFloat($("#discount").val()) || 0;
@@ -38,15 +28,6 @@ function updateNewTotal() {
     $("#newTotal").val(newTotal.toFixed(2));
 }
 */
-
-/*function updateNewTotal() {
-    let total = parseFloat($("#total").val()) || 0;
-    let discountPercent = parseFloat($("#discount").val()) || 0;
-    let discountAmount = (total * discountPercent) / 100;
-    let newTotal = total - discountAmount;
-    $("#newTotal").val(newTotal.toFixed(2));
-    updateBalance();
-}*/
 
 function updateNewTotal() {
     let total = parseFloat($("#total").val()) || 0;
@@ -60,15 +41,6 @@ function updateNewTotal() {
         $("#newTotal").val('');
     }
 }
-
-
-
-/*function updateBalance() {
-    let newTotal = parseFloat($("#newTotal").val()) || 0;
-    let paidAmount = parseFloat($("#paidAmount").val()) || 0;
-    let balance = paidAmount - newTotal;
-    $("#balance").val(balance.toFixed(2));
-}*/
 
 function updateBalance() {
     let newTotal = parseFloat($("#newTotal").val()) || 0;
@@ -98,8 +70,6 @@ function clearFormInputs() {
     $("#balance").val('');
     $(".PurchaseTbl tbody").empty();
 }
-
-
 
 $("#navOrder").on("click", () => {
 
