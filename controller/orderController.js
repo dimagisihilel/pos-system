@@ -220,6 +220,57 @@ $("#btnpurchase").on('click', function () {
         orderItems.push(orderItem);
     });
 
+    // Display the bill in the modal
+    let billContent = `
+        <p>Order ID: ${orderIdCounter}</p>
+        <p>Customer ID: ${customerId}</p>
+        <p>Order Date: ${orderDate}</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Order Quantity</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    $(".PurchaseTbl tbody tr").each(function () {
+        let itemId = $(this).find("th").text();
+        let description = $(this).find("td:nth-child(2)").text();
+        let unitPrice = $(this).find("td:nth-child(3)").text();
+        let orderQty = $(this).find("td:nth-child(4)").text();
+        let total = $(this).find("td:nth-child(5)").text();
+
+        billContent += `
+            <tr>
+                <td>${itemId}</td>
+                <td>${description}</td>
+                <td>${unitPrice}</td>
+                <td>${orderQty}</td>
+                <td>${total}</td>
+            </tr>
+        `;
+    });
+
+    billContent += `
+            </tbody>
+        </table>
+        <p>Total: Rs. ${total.toFixed(2)}</p>
+        <p>Discount: ${discount}%</p>
+        <p>New Total: Rs. ${newTotal.toFixed(2)}</p>
+        <p>Paid Amount: Rs. ${paidAmount.toFixed(2)}</p>
+        <p>Balance: Rs. ${balance.toFixed(2)}</p>
+    `;
+
+    $("#billContent").html(billContent);
+
+    // Show the modal
+    $('#billModal').modal('show');
+
     // Increment order ID for the next order
     orderIdCounter++;
 
@@ -229,6 +280,30 @@ $("#btnpurchase").on('click', function () {
     // Display next order ID
     $("#orderId").val(orderIdCounter);
 
-    // Show success message (optional)
-    alert("Order placed successfully!");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+        // Increment order ID for the next order
+        orderIdCounter++;
+
+        // Clear form inputs
+        clearFormInputs();
+
+        // Display next order ID
+        $("#orderId").val(orderIdCounter);
+
+        // Show success message (optional)
+        alert("Order placed successfully!");*/
 });
